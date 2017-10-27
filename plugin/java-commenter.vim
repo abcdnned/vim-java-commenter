@@ -26,10 +26,10 @@ function! s:generate_class()
     let lst = matchlist(text, s:p_class)
     let type = lst[1]
     let class_name = lst[2]
-    if type == 'class'
-        let comment = ['/**', ' * The Class ' . class_name . '.', ' */']
+    if type == 'class '
+        let comment = ['/**', ' * The Class ' . class_name . '.', ' *', ' * @version 1.0', ' */']
     else
-        let comment = ['/**', ' * The Interface ' . class_name . '.', ' */']
+        let comment = ['/**', ' * The Interface ' . class_name . '.', ' *', ' * @version 1.0', ' */']
     endif
     let s = s:skip_ann(l)
     call append(s, comment)
